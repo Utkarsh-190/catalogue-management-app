@@ -1,0 +1,11 @@
+.searchBar {
+  /* height: auto; */
+}
+
+.searchBar > input {
+  height: 2rem;
+  width: 10rem;
+  padding: 0 0.5rem;
+  border: 2px solid var(--border-black);
+  outline: none;
+}
