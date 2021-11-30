@@ -12,7 +12,7 @@
 }
 
 ::selection {
-  background: var(--blue);
+  background: var(--dark-blue);
   color: white;
 }
 

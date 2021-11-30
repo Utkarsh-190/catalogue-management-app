@@ -1,0 +1,17 @@
+.product {
+  border: 1px solid var(--border-black);
+  border-radius: 1rem;
+}
+
+.product > img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.title {
+  overflow: hidden;
+}
+
+.description {
+  overflow: hidden;
+}
