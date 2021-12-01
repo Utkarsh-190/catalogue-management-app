@@ -3,8 +3,10 @@ import classes from "./Product.module.css";
 const Product = ({ product }) => {
   return (
     <div className={classes.product}>
-      <img src={product.image} alt={product.title} />
-      <div className={classes.category}>{product.category}</div>
+      <div className={classes.image}>
+        <img src={product.image} alt={product.title} />
+        <div>{product.category}</div>
+      </div>
 
       <div className={classes.info}>
         <div className={classes.title}>{product.title}</div>
