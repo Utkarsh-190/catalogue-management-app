@@ -2,7 +2,7 @@ import classes from "./Navbar.module.css";
 import Filter from "./Filter";
 import Search from "./Search";
 
-const Navbar = ({ productList, onSearchProduct }) => {
+const Navbar = ({ productList, onSearchProduct, onFilterHandler }) => {
   const searchProduct = (id) => {
     onSearchProduct(id);
   };
@@ -11,7 +11,7 @@ const Navbar = ({ productList, onSearchProduct }) => {
     <div className={classes.navbar}>
       <div className={classes.heading}>Catalog management app</div>
       <div className={classes.options}>
-        <Filter />
+        <Filter filterProduct={onFilterHandler} />
         <Search productList={productList} searchProduct={searchProduct} />
       </div>
     </div>

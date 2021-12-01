@@ -10,12 +10,13 @@
   border: 2px solid var(--border-black);
   outline: none;
   position: relative;
+  text-transform: capitalize;
 }
 
 .suggestionBox {
   width: 13rem;
-  height: 15rem;
-  overflow: hidden;
+  max-height: 15rem;
+  overflow: auto;
   background: white;
   color: black;
   position: absolute;
@@ -28,6 +29,7 @@
   border: 1px solid var(--border-black);
   border-top: none;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .suggestionBox > div:hover {

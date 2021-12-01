@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import classes from "./Filter.module.css";
 
-const Filter = () => {
+const Filter = ({ filterProduct }) => {
   const [categories, setCategories] = useState(["Filter"]);
 
   useEffect(() => {
@@ -10,16 +10,21 @@ const Filter = () => {
         `https://fakestoreapi.com/products/categories`
       );
       const data = await response.json();
-      setCategories([...data, "All products"]);
+      setCategories(["all products", ...data]);
     };
 
-    // loadCategories();
+    loadCategories();
   }, []);
+
+  const selectFilterHandler = (event) => {
+    // console.log(event.target.value);
+    filterProduct(event.target.value);
+  };
 
   return (
     <div className={classes.filterBar}>
       {categories && (
-        <select>
+        <select onChange={selectFilterHandler}>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
