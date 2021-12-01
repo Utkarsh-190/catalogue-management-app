@@ -2,8 +2,10 @@ import classes from "./Navbar.module.css";
 import Filter from "./Filter";
 import Search from "./Search";
 
-const Navbar = ({ productList }) => {
-  const searchProduct = () => {};
+const Navbar = ({ productList, onSearchProduct }) => {
+  const searchProduct = (id) => {
+    onSearchProduct(id);
+  };
 
   return (
     <div className={classes.navbar}>

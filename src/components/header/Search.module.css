@@ -1,11 +1,35 @@
 .searchBar {
   /* height: auto; */
+  width: 50%;
 }
 
 .searchBar > input {
   height: 2rem;
-  width: 10rem;
+  width: 13rem;
   padding: 0 0.5rem;
   border: 2px solid var(--border-black);
   outline: none;
+  position: relative;
+}
+
+.suggestionBox {
+  width: 13rem;
+  height: 15rem;
+  overflow: hidden;
+  background: white;
+  color: black;
+  position: absolute;
+}
+
+.suggestionBox > div {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-black);
+  border-top: none;
+  cursor: pointer;
+}
+
+.suggestionBox > div:hover {
+  background: var(--hover-blue);
 }

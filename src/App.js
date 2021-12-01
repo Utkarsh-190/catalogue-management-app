@@ -17,10 +17,17 @@ function App() {
     loadProducts();
   }, []);
 
+  const onSearchHandler = (id) => {
+    let products = productList;
+    products = products.filter((product) => product.id === Number(id));
+    console.log(products);
+    setProductList(products);
+  };
+
   return (
     <div className={classes.app}>
       <nav className={classes.nav}>
-        <Navbar productList={productList} />
+        <Navbar productList={productList} onSearchProduct={onSearchHandler} />
       </nav>
       <div className={classes.body}>
         <ProductsList productList={productList} />
