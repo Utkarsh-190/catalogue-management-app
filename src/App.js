@@ -7,6 +7,7 @@ import PieChart from "./components/overlay/PieChart";
 function App() {
   const [productList, setProductList] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [showAnalysis, setShowAnalysis] = useState(false);
 
   const loadProducts = async () => {
     const response = await fetch(`https://fakestoreapi.com/products`);
@@ -35,6 +36,10 @@ function App() {
     setProductList(products);
   };
 
+  const toggleAnalysis = () => {
+    setShowAnalysis((prevState) => !prevState);
+  };
+
   return (
     <div className={classes.app}>
       <nav className={classes.nav}>
@@ -49,9 +54,13 @@ function App() {
         <ProductsList productList={productList} />
       </div>
 
-      <div>
-        <PieChart productList={productList} />
-      </div>
+      {showAnalysis ? (
+        <div className={classes.chartModel}>
+          <PieChart productList={productList} toggleAnalysis={toggleAnalysis} />
+        </div>
+      ) : (
+        <button onClick={toggleAnalysis}>Analyse</button>
+      )}
     </div>
   );
 }

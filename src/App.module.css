@@ -10,6 +10,10 @@
   --dark-blue: #0000ff;
   --hover-blue: #c9ddff;
   --border-black: #434343;
+  --electronics: #ed6e85;
+  --jewelery: #f2a254;
+  --men-clothing: #f8cd6b;
+  --women-clothing: #6cbdbf;
 }
 
 ::selection {
@@ -20,6 +24,7 @@
 .app {
   height: 100vh;
   width: 100vw;
+  position: relative;
 }
 
 .nav {
@@ -30,4 +35,14 @@
 .body {
   height: 90%;
   width: 100%;
+}
+
+.chartModel {
+  height: 90vh;
+  width: 40vw;
+  background: white;
+  position: absolute;
+  z-index: 100;
+  right: 0px;
+  top: 10%;
 }
