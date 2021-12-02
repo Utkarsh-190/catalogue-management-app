@@ -17,7 +17,6 @@ const Filter = ({ filterProduct }) => {
   }, []);
 
   const selectFilterHandler = (event) => {
-    // console.log(event.target.value);
     filterProduct(event.target.value);
   };
 

@@ -6,13 +6,25 @@ const Search = ({ productList, searchProduct }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState();
 
+  const initializeSuggestions = (list) => {
+    list = list.map((product) => {
+      return {
+        start: "",
+        end: product.title,
+        title: product.title,
+        id: product.id,
+      };
+    });
+    setSuggestions(list);
+  };
+
   useEffect(() => {
-    setSuggestions(productList);
+    initializeSuggestions(productList);
   }, [productList]);
 
   const searchHandler = (event) => {
-    setSearchText(event.target.innerText);
     searchProduct(event.target.id);
+    setSearchText(event.target.innerText);
   };
 
   const giveSuggestions = () => {
@@ -20,12 +32,12 @@ const Search = ({ productList, searchProduct }) => {
   };
 
   const hideSuggestions = () => {
-    if (searchText === "") {
+    if (searchText === "" && productList.length === 1) {
       searchProduct("refresh list");
     }
     setTimeout(() => {
       setShowSuggestions(false);
-    }, 200);
+    }, 300);
   };
 
   const changeHandler = (event) => {
@@ -48,7 +60,7 @@ const Search = ({ productList, searchProduct }) => {
       });
       setSuggestions(matches);
     } else {
-      setSuggestions(productList);
+      initializeSuggestions(productList);
     }
     setSearchText(text);
   };
@@ -68,7 +80,8 @@ const Search = ({ productList, searchProduct }) => {
           {suggestions.map((product) => {
             return (
               <div key={product.id} id={product.id} onClick={searchHandler}>
-                {product.title}
+                <strong>{product.start}</strong>
+                {product.end}
               </div>
             );
           })}

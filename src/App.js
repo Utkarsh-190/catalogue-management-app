@@ -20,10 +20,6 @@ function App() {
   }, []);
 
   const onSearchHandler = (id) => {
-    if (id == "refresh list") {
-      setProductList(allProducts);
-      return;
-    }
     let products = allProducts;
     products = products.filter((product) => product.id === Number(id));
     setProductList(products);
@@ -43,13 +39,18 @@ function App() {
     <div className={classes.app}>
       <nav className={classes.nav}>
         <Navbar
-          productList={allProducts}
+          productList={productList}
           onSearchProduct={onSearchHandler}
           onFilterHandler={onFilterHandler}
         />
       </nav>
+
       <div className={classes.body}>
         <ProductsList productList={productList} />
+      </div>
+
+      <div>
+        <PieChart productList={productList} />
       </div>
     </div>
   );
