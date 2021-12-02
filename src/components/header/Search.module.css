@@ -1,6 +1,6 @@
 .searchBar {
   /* height: auto; */
-  width: 50%;
+  /* width: 50%; */
 }
 
 .searchBar > input {
@@ -13,6 +13,10 @@
   text-transform: capitalize;
 }
 
+.searchBar > input:hover {
+  border: 2px solid var(--dark-blue);
+}
+
 .suggestionBox {
   width: 13rem;
   max-height: 15.4rem;
@@ -20,6 +24,7 @@
   background: white;
   color: black;
   position: absolute;
+  z-index: 50;
 }
 
 .suggestionBox > div {

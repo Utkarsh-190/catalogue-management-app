@@ -8,7 +8,12 @@
   padding: 0 0.5rem;
   border: 2px solid var(--border-black);
   outline: none;
+  cursor: pointer;
   text-transform: capitalize;
+}
+
+.filterBar > select:hover {
+  border: 2px solid var(--dark-blue);
 }
 
 .filterBar > select > option {
