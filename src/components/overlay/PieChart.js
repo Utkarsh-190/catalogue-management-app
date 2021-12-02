@@ -1,8 +1,9 @@
 import { Bar, Pie } from "react-chartjs-2";
 import classes from "./PieChart.module.css";
 import Chart from "chart.js/auto";
+import closeIcon from "../../assets/close_icon.svg";
 
-const PieChart = ({ productList }) => {
+const PieChart = ({ productList, toggleAnalysis }) => {
   const categories = [
     "Electronics",
     "Jewelery",
@@ -21,7 +22,10 @@ const PieChart = ({ productList }) => {
 
   return (
     <div className={classes.model}>
-      <div className={classes.heading}>Categories in catalogue</div>
+      <div className={classes.heading}>
+        <div>Categories in catalogue</div>
+        <img src={closeIcon} onClick={toggleAnalysis} alt="close icon" />
+      </div>
       <div className={classes.chart}>
         <Pie
           data={{
