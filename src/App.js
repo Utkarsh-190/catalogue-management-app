@@ -17,7 +17,7 @@ function App() {
   };
 
   useEffect(() => {
-    // loadProducts();
+    loadProducts();
   }, []);
 
   const onSearchHandler = (id) => {

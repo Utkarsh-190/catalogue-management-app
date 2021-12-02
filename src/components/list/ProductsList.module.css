@@ -10,3 +10,18 @@
   grid-gap: 5rem;
   grid-row-gap: 3rem;
 }
+
+.productList::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.productList::-webkit-scrollbar-track {
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  background: var(--light-blue);
+}
+
+.productList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--blue);
+}

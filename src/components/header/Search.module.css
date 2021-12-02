@@ -15,7 +15,7 @@
 
 .suggestionBox {
   width: 13rem;
-  max-height: 15rem;
+  max-height: 15.4rem;
   overflow: auto;
   background: white;
   color: black;
@@ -23,8 +23,8 @@
 }
 
 .suggestionBox > div {
-  height: 1.5rem;
-  padding: 0 0.5rem;
+  height: 1.4rem;
+  padding: 0.1rem 0.5rem;
   overflow: hidden;
   border: 1px solid var(--border-black);
   border-top: none;
@@ -34,4 +34,18 @@
 
 .suggestionBox > div:hover {
   background: var(--hover-blue);
+}
+
+.suggestionBox::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+.suggestionBox::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: var(--light-blue);
+}
+
+.suggestionBox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--blue);
 }

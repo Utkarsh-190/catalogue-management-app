@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Convergence&display=swap");
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Convergence", sans-serif;
 }
 
 :root {
@@ -59,10 +61,9 @@
   z-index: 10;
   right: 4rem;
   bottom: 5rem;
-  opacity: 0.9;
   transition: 0.1s ease-in-out;
 }
 
 .app > button:hover {
-  opacity: 1;
+  box-shadow: 3px 3px 10px var(--border-black);
 }
